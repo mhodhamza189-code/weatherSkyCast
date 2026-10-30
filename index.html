@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyCast - Real-time Weather</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+
+<body>tumn
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <span>Sky<strong>Cast</strong></span>
+      </div>
+      <nav class="weather-links" aria-label="Weather maps">
+        <a id="radarLink" class="radar-nav-link" href="radar.html">
+          Live Radar
+        </a>
+        <a class="radar-nav-link" href="https://zoom.earth/" target="_blank" rel="noopener noreferrer">
+          Zoom Earth
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Real-Time Forecast</p>
+          <h1>Know your weather, <em>anywhere</em>.</h1>
+          <p class="hero-note">Accurate hourly and 7-day weather outlook.</p>
+        </div>
+
+        <div class="search">
+          <form id="searchForm">
+            <label for="cityInput">Search City</label>
+            <div class="search-row">
+              <input type="text" id="cityInput" placeholder="Search City or place ..." required autocomplete="off" />
+              <button type="submit">Search</button>
+            </div>
+          </form>
+          <p id="searchStatus" class="search-status"></p>
+        </div>
+      </section>
+
+      <section id="dashboard" class="dashboard">
+        <div class="loading">
+          <span></span>
+          <p>Loading weather data...</p>
+        </div>
+      </section>
+
+      <section class="cyclone-section" aria-labelledby="cycloneHeading">
+        <div class="cyclone-heading">
+          <div>
+            <p class="eyebrow">Live tracking</p>
+            <h2 id="cycloneHeading">Dangerous cyclones</h2>
+            <p class="cyclone-intro">Recently tracked tropical storms, with the country near the latest position, ocean,
+              wind speed, and update time.</p>
+          </div>
+          <button id="refreshCyclones" class="cyclone-refresh" type="button">Refresh</button>
+        </div>
+        <p id="cycloneStatus" class="cyclone-status" role="status" aria-live="polite">Loading cyclone tracks...</p>
+        <div id="cycloneList" class="cyclone-list"></div>
+        <p class="cyclone-attribution">
+          Track data from <a href="https://eonet.gsfc.nasa.gov/" target="_blank" rel="noopener noreferrer">NASA
+            EONET</a>
+          and storm agencies; location lookup by <a href="https://www.bigdatacloud.com/" target="_blank"
+            rel="noopener noreferrer">BigDataCloud</a>.
+          This is tracking information, not an official warning. Follow local weather authorities.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Weather data provided by <a href="https://open-meteo.com/" target="_blank" rel="noopener">API</a>
+      <p class="creator-credit"> "Hello Annie" Made by Hamza — game name: Jacksonn01. Thank you ❤️</p>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
